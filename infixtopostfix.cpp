@@ -2,7 +2,7 @@
 #include <iostream>
 #include <conio.h>
 using namespace std;
-#define amount 10
+#define amount 10 //agar variabel amount selalu bernilai 10
 
 int add(char);
 char del();
@@ -117,22 +117,26 @@ char *toPostfix(char infix[amount]){
 
             postfix[j++] = infix[i];
             i++;
-        }
-        else{
+
+        } else{
 
             if (infix[i] == ')'){
                 do{
+
                     symbol = del();
                     if (symbol == '(')
                         break;
                     postfix[j++] = symbol;
+
                 } while (symbol != '(');
                 i++;
+
             }
             else if ((infix[i] == '(') || (primary(st.stc[st.top]) < primary(infix[i]))){
 
                 add(infix[i]);
                 i++;
+
             }
             else
                 postfix[j++] = del();
@@ -143,11 +147,10 @@ char *toPostfix(char infix[amount]){
         symbol = del();
         if (symbol == '$')
             break;
-        postfix[j++] = symbol;
+            postfix[j++] = symbol;
+
     } while (symbol != '$');
 
-    return postfix;
+        return postfix;
 }
-
-
 
