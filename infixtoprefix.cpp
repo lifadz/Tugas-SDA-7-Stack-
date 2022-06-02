@@ -1,8 +1,8 @@
 // convert infix to prefix
 #include <iostream>
 #include <conio.h>
-#include <string.h>
-#define amount 10
+#include <string.h>//agar dapat menggunakan fungsi sttrev
+#define amount 10 //agar variabel amount selalu bernilai 10
 using namespace std;
 
 int add(char);
@@ -14,40 +14,40 @@ int primary(char);
 char *toPrefix(char *);
 char prefix[amount];
 
-struct stack
-{
+struct stack{
+
     int top;
     char stc[amount];
     
 } st;
 
-int main()
-{
+int main(){
+
     char infix[amount];
     cout << "------Infix to Prefix------" << "\n" << endl;
     cout << "Input Infix Number Expression : ";//input infix, contoh: 2+(6*5)/9
     cin >> infix;
 
     printf("\nInfix Number Expression : %s", infix);
-    printf("\nPrefix Number Expression : %s", toPrefix(strrev(infix)));// sttrv berfungsi untuk membalik string
+    printf("\nPrefix Number Expression : %s", toPrefix(strrev(infix))); //sttrev berfungsi untuk membalik string
 
     return 0;
 }
 
-int add(char symbol)
-{
+int add(char symbol){
+
     return st.stc[++st.top] = symbol;
 }
 
-char del()
-{
+char del(){
+
     return st.stc[st.top--];
 }
 
-int primary(char symbol)
-{
-    switch (symbol)
-    {
+int primary(char symbol){
+
+    switch (symbol){
+
     case ')':
         return 0;
         break;
@@ -80,8 +80,8 @@ int primary(char symbol)
     }
 }
 
-int theOperator(char symbol)
-{
+int theOperator(char symbol){
+
     switch (symbol){
 
     case '+':
@@ -108,48 +108,51 @@ int theOperator(char symbol)
     }
 }
 
-char *toPrefix(char infix[amount])
-{
-    st.top = -1;
-    char symbol;
-    int i = 0, j = 0;
+char *toPrefix(char infix[amount]){
 
-    add('$');
-    while (infix[i] != '\0')
-    {
-        if (!theOperator(infix[i]))
-        {
-            prefix[j++] = infix[i];
-            i++;
-        }
-        else
-        {
-            if (infix[i] == '(')
-            {
-                do
-                {
+st.top = -1;
+char symbol;
+int i = 0, j = 0;
+add('$');
+while (infix[i] != '\0'){
+
+    if (!theOperator(infix[i])){
+
+        prefix[j++] = infix[i];
+        i++;
+
+        } else{
+
+            if (infix[i] == '('){
+
+                do{
+
                     symbol = del();
                     if (symbol == ')')
                         break;
                     prefix[j++] = symbol;
+
                 } while (symbol != ')');
                 i++;
+
             }
-            else if ((infix[i] == ')') || (primary(st.stc[st.top]) < primary(infix[i])))
-            {
+            else if ((infix[i] == ')') || (primary(st.stc[st.top]) < primary(infix[i]))){
+
                 add(infix[i]);
                 i++;
+
             }
             else
                 prefix[j++] = del();
         }
     }
-    do
-    {
+    do{
+
         symbol = del();
         if (symbol == '$')
             break;
         prefix[j++] = symbol;
+
     } while (symbol != '$');
     prefix[j] = '\0';
 
