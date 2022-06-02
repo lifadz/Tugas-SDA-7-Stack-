@@ -151,10 +151,10 @@ while (infix[i] != '\0'){
         symbol = del();
         if (symbol == '$')
             break;
-        prefix[j++] = symbol;
+            prefix[j++] = symbol;
 
     } while (symbol != '$');
-    prefix[j] = '\0';
+        prefix[j] = '\0';
 
-    return strrev(prefix);
+        return strrev(prefix);
 }
