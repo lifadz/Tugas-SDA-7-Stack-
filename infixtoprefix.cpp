@@ -1,8 +1,9 @@
 // convert infix to prefix
-#include <stdio.h>
+#include <iostream>
 #include <conio.h>
 #include <string.h>
 #define amount 10
+using namespace std;
 
 int add(char);
 char del();
@@ -23,8 +24,9 @@ struct stack
 int main()
 {
     char infix[amount];
-    printf("\nInput Infix Number Expression : ");//input infix, contoh: 2+(6*5)/9
-    gets(infix);
+    cout << "------Infix to Prefix------" << "\n" << endl;
+    cout << "Input Infix Number Expression : ";//input infix, contoh: 2+(6*5)/9
+    cin >> infix;
 
     printf("\nInfix Number Expression : %s", infix);
     printf("\nPrefix Number Expression : %s", toPrefix(strrev(infix)));
