@@ -23,8 +23,9 @@ struct stack{
 int main(){
 
     char infix[amount];
-    cout << ("\nInput Infix Number Expression : "); //input infix, contoh: 2+(6*5)/9
-    gets(infix);
+    cout << "------Infix to Postfix------" << "\n" << endl;
+    cout << "Input Infix Number Expression : "; //input infix, contoh: 2+(6*5)/9
+    cin >> infix;
 
     cout << "\nInfix Number : " << infix << endl;
     cout << "Postfix Number : " << toPostfix(infix);
@@ -147,4 +148,6 @@ char *toPostfix(char infix[amount]){
 
     return postfix;
 }
+
+
 
