@@ -29,7 +29,7 @@ int main()
     cin >> infix;
 
     printf("\nInfix Number Expression : %s", infix);
-    printf("\nPrefix Number Expression : %s", toPrefix(strrev(infix)));
+    printf("\nPrefix Number Expression : %s", toPrefix(strrev(infix)));// sttrv berfungsi untuk membalik string
 
     return 0;
 }
