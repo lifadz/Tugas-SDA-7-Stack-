@@ -12,3 +12,5 @@ Dosen Pengampu  :Mochammad Yusa,S.Kom.,M.Kom.
 
 3. Membuat stack
 
+4. Membuat palindrome checker
+
