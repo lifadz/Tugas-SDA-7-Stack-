@@ -20,18 +20,6 @@ struct stack{
 
 } st;
 
-int main(){
-
-    char infix[amount];
-    cout << "------Infix to Postfix------" << "\n" << endl;
-    cout << "Input Infix Number Expression : "; //input infix, contoh: 2+(6*5)/9
-    cin >> infix;
-
-    cout << "\nInfix Number : " << infix << endl;
-    cout << "Postfix Number : " << toPostfix(infix);
-    return 0;
-}
-
 int primary(char symbol){
 
     switch (symbol){
@@ -154,3 +142,14 @@ char *toPostfix(char infix[amount]){
         return postfix;
 }
 
+int main(){
+
+    char infix[amount];
+    cout << "------Infix to Postfix------" << "\n" << endl;
+    cout << "Input Infix Number Expression : "; //input infix, contoh: 2+(6*5)/9
+    cin >> infix;
+
+    cout << "\nInfix Number : " << infix << endl;
+    cout << "Postfix Number : " << toPostfix(infix);
+    return 0;
+}
