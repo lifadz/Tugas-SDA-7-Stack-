@@ -21,19 +21,6 @@ struct stack{
     
 } st;
 
-int main(){
-
-    char infix[amount];
-    cout << "------Infix to Prefix------" << "\n" << endl;
-    cout << "Input Infix Number Expression : ";//input infix, contoh: 2+(6*5)/9
-    cin >> infix;
-
-    printf("\nInfix Number Expression : %s", infix);
-    printf("\nPrefix Number Expression : %s", toPrefix(strrev(infix))); //sttrev berfungsi untuk membalik string
-
-    return 0;
-}
-
 int add(char symbol){
 
     return st.stc[++st.top] = symbol;
@@ -157,4 +144,17 @@ while (infix[i] != '\0'){
         prefix[j] = '\0';
 
         return strrev(prefix);
+}
+
+int main(){
+
+    char infix[amount];
+    cout << "------Infix to Prefix------" << "\n" << endl;
+    cout << "Input Infix Number Expression : ";//input infix, contoh: 2+(6*5)/9
+    cin >> infix;
+
+    printf("\nInfix Number Expression : %s", infix);
+    printf("\nPrefix Number Expression : %s", toPrefix(strrev(infix))); //sttrev berfungsi untuk membalik string
+
+    return 0;
 }
